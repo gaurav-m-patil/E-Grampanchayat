@@ -1,0 +1,27 @@
+.my_input
+{
+  border: 1px solid black;
+}
+.my_input:focus
+{
+  
+}
+.my_select
+{
+  padding: 5px 10%;
+  border: 1px solid black;
+  border-bottom: 1px solid .000000;
+}
+
+.my_table
+{
+  border-collapse: collapse;
+  width: 100%;
+  
+}
+.my_table th
+{
+  border: 1px solid black;
+  border-style: inset;
+}
+
