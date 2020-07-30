@@ -1,0 +1,30 @@
+.carousel-img-1 {
+    background-image:url('../img/images/slider6.jpg');
+    width: 100%;
+    height: 100%;
+     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel-img-2 {
+    background-image:url('../img/images/slider7.jpg');
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.carousel-img-3 {
+    background-image:url('../img/images/slider3.jpg');
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
