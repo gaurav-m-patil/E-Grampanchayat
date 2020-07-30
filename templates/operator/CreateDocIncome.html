@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+{% block body %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<body style="background-color: ">
+	<div style="background-color: white; margin: auto 5%;width: 90%;padding: 1%">
+		<span style="float: right">https://egram.gov.com/trackingId/{{req_data[0][5]}}</span>
+		<div style="border: 1px solid black;margin: 3% auto;padding: 3% 5%;height: 100%;">
+			<center>
+				<img src="https://treamisworldschool.files.wordpress.com/2015/01/national-emblem-india.png" width="90px">
+				<h1>E-Gram Service, Gov of Maharashtra</h1>
+			</center>
+			<br><br>
+			<h4>Documents Attached:</h4>
+			<h4>x : Application of {{req_data[0][7]}} {{req_data[0][8]}} {{req_data[0][9]}} on dated {{req_data[0][3]}}</h4>
+			{% for doc in req_doc %}
+				{% if req_data[0][0] == doc[1] %}
+					<h4>x : {{doc[2]}}</h4>
+				{% endif %}
+			{% endfor %}
+			<center>
+				<h2>{{req_data[0][6]}}</h2>
+			</center>
+			<div>
+				<br><br>
+				<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It is Certify that, {{req_data[0][7]}} {{req_data[0][8]}} {{req_data[0][9]}}'s annual income of him and his family of 2018 - 2019 is {{req_data[0][21]}}. The certificate has been given to {{req_data[0][7]}} {{req_data[0][8]}} {{req_data[0][9]}} for personal work.</h3>
+				<br>
+				<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The certificate has been given on the basis of the information and evidence presented by the applicant and if this information is found to be false, it will be eligible for legal action.</h3>
+				<br>
+				<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This certificate will be valid for one year.</h3>
+				<div style="margin-left: 65%">
+					<br><br>
+					<img style="margin-left: 25%" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Checkmark_green.svg" width="50px">
+					<h4 style="margin-left: 18%">( e-verified )</h4>
+					<h4>Sub Divisional Officer</h3>
+				</div>
+				<br><br>
+				<h4>Certificate Number : {{req_data[0][6].split()[0]}}/{{req_data[0][13]}}/{{req_data[0][5]}}</h3>
+				<h4>From : E-gram Service Regional office, Mumbai - 400 001</h3>
+				<h4>Date : {{c_date}}</h3>
+				<h4>Location : Mumbai,Maharashtra.</h3>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+{% endblock %}
+
+</body>
+</html>

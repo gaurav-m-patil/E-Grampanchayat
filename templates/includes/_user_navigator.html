@@ -1,0 +1,61 @@
+<nav>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+              <a class="navbar-brand" href="../finnexia/"><div class="logo-brand"><img src="img/master/logo-2.png" alt=""></div></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link" href="{{ url_for('userHome')}}" >HOME</a>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#userAbout">ABOUT</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">MY ACTIVITIES<span class="caret-drop"></span></a>
+                    <ul class="dropdown-menu">
+                      <li class="divider-top"></li>
+                      <li><a class="dropdown-item" href="{{url_for('user_request')}}">REQUESTS</a></li>
+                      <li class="divider"></li>
+                      <li><a class="dropdown-item" href="{{url_for('all_req')}}">TRACK REQUEST</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Find Location<span class="caret-drop"></span></a>
+                    <ul class="dropdown-menu">
+                      <li class="divider-top"></li>
+                      <li><a class="nav-link" href="{{ url_for('user_locations',cat='Hospitals')}}">Hospitals</a></li>
+                      <li class="divider"></li>
+                      <li><a class="nav-link" href="{{ url_for('user_locations',cat='Schools')}}">Schools</a></li>
+                      <li class="divider"></li>
+                      <li><a class="nav-link" href="{{ url_for('user_locations',cat='Colleges')}}">Colleges</a></li>
+                      <li class="divider"></li>
+                      <li><a class="nav-link" href="{{ url_for('user_locations',cat='Blood Banks')}}">Blood Banks</a></li>
+                      <li class="divider"></li>
+                      <li><a class="nav-link" href="{{ url_for('user_locations',cat='Police Stations')}}">Police Station</a></li>
+                      <li class="divider"></li>
+                      <li><a class="nav-link" href="{{ url_for('user_locations',cat='Govt Offices')}}">Govt Offices</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link" href="{{ url_for('user_letest')}}" >LETEST</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('user_profile')}}">MY PROFILE</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">CONTACT</a>
+                  </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                  <a style="font-size:18px;margin:0px 10px;color:#000" href="{{ url_for('userHome')}}">Welcome, {{ session['u_full_name'] }}</a>
+                  &nbsp;
+                  <a class="btn btn-nav" href="{{ url_for('user_logout')}}">logout</a>
+                </form>
+              </div>
+            </nav>
+        </div>
+    </nav>

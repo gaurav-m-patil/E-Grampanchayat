@@ -1,0 +1,31 @@
+{% extends 'user/user_layout.html' %}
+
+{% block body %}
+<div class="container" style="margin-top: 0px;">
+  <div class="row">
+  	<div class="col-sm-1">
+		
+	</div>
+  	<div class="col-sm-10">
+
+		{% if data %}
+		<h2>My Feedbacks</h2>
+		<br>
+			{%for items in data%}
+				<h4>{{items[2]}}</h4>
+			  	<h5 style="padding-left: 5%;">{{items[3]}}</h5>
+			  	<hr>
+			{%endfor%}
+		{%else%}
+		  <h1>Data Not Fonds</h1>
+
+		{% endif%}
+
+	</div>
+	<div class="col-sm-1">
+		
+	</div>
+  </div>
+</div>
+
+{% endblock %}

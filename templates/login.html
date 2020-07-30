@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+
+	<center>
+		<h3>Login</h3>
+		<div class="row">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-6">
+				<form method="POST" action="" style="font-size: 18px;">
+					<div class="form-group">
+						<label style="width: 15%">email : </label>						
+						<input type="email" class="input" name="email"  value="{{request.form.email}}">
+					</div>
+					<div class="form-group">
+						<label style="width: 15%">Password : </label>
+						<input type="password" class="input"  name="password" value="{{request.form.password}}">
+					</div>
+					<input type="submit" class="btn btn-nav" value="Submit">
+				</form>
+			</div>
+			<div class="col-sm-3"></div>
+		</div>
+	</center>
+	<br><br><br>
+
+{% endblock %}

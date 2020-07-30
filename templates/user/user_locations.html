@@ -1,0 +1,88 @@
+{% extends 'user/user_layout.html' %}
+
+{% block body %}
+<style type="text/css">
+.my_ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  border: 1px solid #000033;
+  border-radius : 10px;
+}
+
+.my_li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+
+}
+
+.my_li a.active {
+  background-color: #030330;
+  color: white;
+}
+
+.my_li a:hover:not(.active) {
+  background-color: #030330;
+  color: white;
+  border-radius : 10px;
+}
+.right_div
+{
+  
+  padding: 0px;
+  border-radius : 10px;
+}
+</style>
+
+<div class="container" style="margin-top: 0px;">
+  <div class="row">
+  	<div class="col-sm-9">
+
+		{% if data %}
+		 <h2>Available {{data[0][1]}}</h2>
+		<table class="my_table">
+			<thead>
+		          <tr>
+		              <th>Sr</th>
+		              <th>Name</th>
+		              <th>Address</th>
+		              <th>Contact</th>
+		              <th>Email</th>
+		          </tr>
+		      </thead>
+		      <tbody>
+            {% set count = 1 %}
+				{%for items in data%}
+				      <tr>
+		              <th>{{ loop.index }}</th>
+		              <th>{{items[2]}}</th>
+		              <th>{{items[3]}}</th>
+		              <th>{{items[4]}}</th>
+		              <th>{{items[5]}}</th>
+		          </tr>
+              {% set count = count + 1 %}
+				{%endfor%}
+			</tbody>
+		</table>
+		{%else%}
+		  <h1>Data Not Fonds</h1>
+
+		{% endif%}
+
+	</div>
+	<div class="col-sm-3 right_div">
+		<ul class="my_ul">
+
+		{% for category in cat%}
+			<li class="my_li"><a href="{{ url_for('user_locations',cat=category[0])}}">- {{category[0]}}</a></li>
+		{% endfor %}
+		</ul>
+	</div>
+  </div>
+</div>
+
+{% endblock %}

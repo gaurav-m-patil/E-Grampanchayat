@@ -1,0 +1,68 @@
+<footer>
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="footer-col">
+                    <h1 style="color: #fff">E - Gram</h1>
+                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form. </p>
+                  <p><a class="btn btn-custom" href="{{ url_for('about')}}" role="button">Learn More</a></p>
+                </div>  
+              </div>
+              <div class="col-lg-2">
+                <div class="footer-col">  
+                    <h5>POPULAR SITES</h5> 
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="{{url_for('about')}}">About us</a></li>
+                        <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="{{url_for('locations',cat='Hospitals')}}">Services</a></li>
+                        <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="#">Blogs</a></li>
+                        <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="#">Careers</a></li>
+                        <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="#">Faq</a></li>
+                    </ul>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="footer-col"> 
+                    <h5>LOCATION</h5>
+                    <div class="location-box">
+                        <figure class="bottom-location-icon"><img src="http://themesquality.com/templates/finnexia/img/master/location-footer.png" alt=""></figure>
+                        <h6>Location:</h6>
+                        <p>India</p>
+                    </div>
+                    
+                    <div class="location-box location-phone">
+                        <figure class="bottom-location-icon"><img src="http://themesquality.com/templates/finnexia/img/master/call-footer.png" alt=""></figure>
+                        <h6>Call us:</h6>
+                        <p>+ 022 1234 4512</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="footer-col last-col">
+                    <h5>NEWSLETTER</h5>
+                    <p>Suscribe to our newsletter and get the lastest scoop right to your inbox!</p>
+                    <div class="newsletter-box">
+                     <form  action="{{ url_for('login')}}" name="sign-up">
+                        <input type="email" class="input" id="email" name="email" placeholder="Your email address" >
+                        <input type="submit" class="button" id="submit" value="SIGN UP">
+                      </form>           
+                    </div>
+                    <p class="cursive">Your email is safe with us, we don't spam.</p>
+                    <a class="btn btn-nav" href="{{ url_for('operator_register')}}">operator regi</a>
+                </div>  
+              </div>
+            </div>
+            <hr class="footer">
+            <div class="bottom-footer">
+                <div class="copytight">
+                    <p>© 2019 Goverment Of Maharashra</p>
+                </div>
+                <div class="social-footer">
+                    <div class="social-items"><a href="#"><div class="icon-fa"><i class="fa fa-facebook-f" aria-hidden="true"></i></div></a></div>
+                    <div class="social-items"><a href="#"><div class="icon-fa"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></div>
+                    <div class="social-items"><a href="#"><div class="icon-fa"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></div>
+                    <div class="social-items"><a href="#"><div class="icon-fa"><i class="fa fa-dribbble" aria-hidden="true"></i></div></a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<a href="#0" class="cd-top">Top</a>

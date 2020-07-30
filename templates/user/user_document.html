@@ -1,0 +1,108 @@
+{% extends 'user/user_layout.html' %}
+
+{% block body %}
+<div class="container" style="margin-top: 0px;">
+  <h2>Application For <u>{{crt[0][1]}}</u><span style="float: right;">Application Id = {{u_req[0][5]}}</span></h2>
+<!--- Income Certificate --->
+  {% if crt[0][1] == "Income Certificate"%}
+    {% if u_detail[0][17] == None or u_detail[0][17] == "" %}
+    <h4 style="color:red">Insert Income</h4>
+    <center>
+      <form class="" action="{{ url_for('user_income')}}" method="post">
+        <label for="income">Insert Income : </label>
+        <input type="hidden" name="c_id" value="{{crt[0][0]}}">
+        <input type="text" name="income" value="" placeholder="{{u_detail[0][17]}}">
+        <input type="submit" name="" value="Update">
+      </form>
+    </center>
+    {% else %}
+    <center>Your Anual income is {{u_detail[0][17]}}
+
+      <a data-toggle="tooltip" title="Update From Profile"><i class="fa fa-question-circle"></i></a>
+
+    </center>
+    {% endif %}
+    <h3>Uploaded Documents</h3>
+     <table style="width:100%">
+      <tr>
+        <th>#</th>
+        <th>Document</th>
+        <th>File</th>
+      </tr>
+      {% for val in docs %}
+      <tr>
+        <th>{{loop.index}}</th>
+        <th>{{val[2]}}</th>
+        <th><a href="static/user_documents/{{val[3]}}" target="_blank">{{val[3]}}</a></th>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <form class="" action="{{url_for('user_req_doc')}}" method="post" enctype="multipart/form-data">
+      <center>
+      <select class="" name="filetype" required>
+        <option value="">select</option>
+        <option value="Identity proof">Identity proof</option>
+        <option value="Residence proof">Residence proof</option>
+        <option value="Income proof">Income proof</option>
+      </select>
+      <input type="file" name="u_doc" style="font-size: 15px">
+      <input type="hidden" name="req_id" value="{{u_req[0][0]}}">
+      <input type="hidden" name="c_id" value="{{crt[0][0]}}">
+      <input type="submit" value="Upload" name="">
+      </center>
+    </form>
+
+  <!--- Birth Certificate --->
+  {% elif crt[0][1] == "Birth Certificate"%}
+      
+    <center>Your Date of Birth is {{u_detail[0][9]}}
+
+      <a data-toggle="tooltip" title="Update From Profile"><i class="fa fa-question-circle"></i></a>
+
+    </center>
+    
+    <h3>Uploaded Documents</h3>
+     <table style="width:100%">
+      <tr>
+        <th>#</th>
+        <th>Document</th>
+        <th>File</th>
+      </tr>
+      {% for val in docs %}
+      <tr>
+        <th>{{loop.index}}</th>
+        <th>{{val[2]}}</th>
+        <th><a href="static/user_documents/{{val[3]}}" target="_blank">{{val[3]}}</a></th>
+      </tr>
+      {% endfor %}
+    </table>
+    <form class="" action="{{url_for('user_req_doc')}}" method="post" enctype="multipart/form-data">
+      <center>
+      <select class="" name="filetype" required>
+        <option value="">select</option>
+        <option value="Identity proof">Identity proof</option>
+        <option value="Residence proof">Residence proof</option>
+        <option value="Birth proof">Birth proof</option>
+      </select>
+      <input type="file" name="u_doc" style="font-size: 15px">
+      <input type="hidden" name="c_id" value="{{crt[0][0]}}">
+      <input type="hidden" name="req_id" value="{{u_req[0][0]}}">
+      <input type="submit" value="Upload" name="">
+      </center>
+    </form>
+
+
+
+<!--- Domicile Certificate --->
+  {% elif crt[0][1] == "Domicile Certificate"%}
+
+
+  {%endif%}
+  <a href="{{ url_for('delete_req',req_id=u_req[0][0]) }}" class="btn btn-nav">Cancle</a>
+
+  <a href="{{ url_for('submit_req',req_id=u_req[0][0]) }}" class="btn btn-nav">Submit</a>
+
+</div>
+
+{% endblock %}

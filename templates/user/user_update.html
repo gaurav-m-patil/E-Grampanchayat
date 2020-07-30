@@ -1,0 +1,94 @@
+{% extends 'user/user_layout.html' %}
+
+{% block body %}
+
+	
+		<div class="container" style="margin: 3% auto">
+		<h3>Update Profile </h3>
+		<br>
+		<form method="POST" action="{{ url_for('user_update')}}" enctype="multipart/form-data" style="font-size: 16px">
+
+			<div class="row">
+				<div class="col-sm-3" >
+					<div class="form-group">
+						<label>First Name : </label>
+						<input required type="text" name="first_name"  value="{{data[0][1]}}">
+					</div>
+					<br>
+					<div class="form-group">
+						<label>Mobile : </label>
+						<input required type="text" name="mobile"  value="{{data[0][4]}}">
+					</div>
+					<br>
+					<div class="form-group">
+						<label>Address : </label>
+						<input required type="text" name="address"  value="{{data[0][11]}}">
+					</div> 
+					
+				</div>
+				<div class="col-sm-3">
+					<div class="form-group">
+						<label>Mid Name : </label>
+						<input required type="text" name="middle_name"  value="{{data[0][2]}}">
+					</div>
+					<br>
+					<div class="form-group">
+						<label>Pin Code : </label>
+						<input required type="text" name="pin_code"  value="{{data[0][12]}}">
+					</div>
+					<br> 
+					<div class="form-group">
+						<label>District : </label>
+						<input required type="text" name="district"  value="{{data[0][13]}}">
+					</div>	
+				</div>
+				<div>
+					<div class="form-group">
+						<label>Last Name : </label>
+						<input required type="text" name="last_name"  value="{{data[0][3]}}">
+					</div> 
+					<br>
+					<div class="form-group">
+						<label>DOB : </label>
+						<input required type="date" name="dob"  value="{{data[0][9]}}">
+					</div>
+					
+					<br>
+					<div class="form-group">
+						<label>Photo : </label>
+						<input required type="file" style="font-size: 80%" name="photo"  value="{{request.form.photo}}">
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="form-group">
+						<label>Aadhar No : </label>
+						<input required type="text" name="aadhar_no"  value="{{data[0][8]}}">
+					</div> 
+					<br>
+					<div class="form-group">
+						<label for="sel1">Gender :</label>
+						 <select required name="gender" value="" id="sel1">
+							 	 <option selected>select</option>
+								 <option value="M">Male</option>
+								 <option value="F">Female</option>
+								 <option value="O">Other</option>
+						 </select>
+					</div> 
+					<br>
+					<div class="form-group">
+						<label>Occupation : </label>
+						<input required type="text" name="occu"  value="{{data[0][14]}}">
+					</div>
+					
+				</div>
+			</div>
+
+			<br>
+			<center>
+			<input type="submit" class="btn btn-nav" name="submit" value="Update">
+			</center>
+		</form>
+		</div>	
+	<br><br><br>
+
+{% endblock %}

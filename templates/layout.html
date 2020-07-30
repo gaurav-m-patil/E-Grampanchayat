@@ -1,0 +1,65 @@
+<!-- http://themesquality.com/templates/finnexia/homepage-v3.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Quickdev">
+
+	<title>E-Gram </title>
+
+	<!-- ==============================================
+		CSS
+		=============================================== -->  
+        <link rel="stylesheet" href="{{ url_for('static', filename='user_includes_file/min_bootstrap.css')}}" >
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='user_includes_file/navbar.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='user_includes_file/stylesheet.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='user_includes_file/homepage.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='user_includes_file/responsive.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='user_includes_file/animate.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='user_includes_file/slick.min.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='user_includes_file/owl.carousel.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome/css/font-awesome.min.css')}}">
+		<script src="{{ url_for('static', filename='user_includes_file/fontawesome.js')}}"></script>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mystyle.css')}}">
+
+</head>
+<body>
+
+
+    {% include '/includes/_top_navbar.html' %}
+    {% include '/includes/_header.html' %}
+    {% include '/includes/_navigator.html' %}
+    
+        {% include '/includes/_messages.html' %} 
+        {% block body %}
+
+        {% endblock %}      
+    
+    {% include '/includes/_footer.html' %}
+
+
+	<a href="#0" class="cd-top">Top</a>
+	<!-- ==============================================
+	JAVASCRIPTS
+	=============================================== -->
+    <script src="{{ url_for('static', filename='user_includes_file/bootstrap.min.js')}}"></script>  
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-101241150-1', 'auto');
+      ga('send', 'pageview');
+    </script> 
+
+
+
+
+
+</body>
+</html>

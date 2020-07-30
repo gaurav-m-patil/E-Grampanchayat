@@ -1,0 +1,111 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+		<div class="container" >
+		<center>
+		<h3>Registration Form</h3>
+		<br>
+		<form method="POST" action="{{ url_for('user_register')}}" enctype="multipart/form-data" style="font-size: 16px">
+			<div class="row">
+				<div class="col-sm-3" >
+					<div class="form-group">
+						<label>First Name : </label>
+						<input required type="text" name="first_name"  value="{{request.form.first_name}}">
+					</div>
+					<br>
+					<div class="form-group">
+						<label>Mobile : </label>
+						<input required type="text" name="mobile"  value="{{request.form.mobile}}">
+					</div>
+					<br>
+					<div class="form-group">
+						<label>Address : </label>
+						<input required type="text" name="address"  value="{{request.form.address}}">
+					</div> 
+					<br>
+					<div class="form-group">
+						<label>Password : </label>
+						<input required type="password" name="password"  value="{{request.form.password}}">
+					</div> 
+				</div>
+				<div class="col-sm-3">
+					<div class="form-group">
+						<label>Mid Name : </label>
+						<input required type="text" name="middle_name"  value="{{request.form.middle_name}}">
+					</div>
+					<br>
+					<div class="form-group">
+						<label>Email : </label>
+						<input required type="text" name="email"  value="{{request.form.email}}">
+					</div> 
+					<br>
+					<div class="form-group">
+						<label>Pin Code : </label>
+						<input required type="text" name="pin_code"  value="{{request.form.pin_code}}">
+					</div> 
+					<br>
+					<div class="form-group">
+						<label>Retype Pass : </label>
+						<input required type="password" name="c_password"  value="{{request.form.c_password}}">
+					</div> 
+				</div>
+				<div>
+					<div class="form-group">
+						<label>Last Name : </label>
+						<input required type="text" name="last_name"  value="{{request.form.last_name}}">
+					</div> 
+					<br>
+					<div class="form-group">
+						<label>DOB : </label>
+						<input required type="date" name="dob"  value="{{request.form.dob}}">
+					</div>
+					<br>
+					<div class="form-group">
+						<label>District : </label>
+						<input required type="text" name="district"  value="{{request.form.district}}">
+					</div>
+					<br>
+					<div class="form-group">
+						<label>Photo : </label>
+						<input required type="file" style="font-size: 80%" name="photo"  value="{{request.form.photo}}">
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="form-group">
+						<label>Aadhar No : </label>
+						<input required type="text" name="aadhar_no"  value="{{request.form.aadhar_no}}">
+					</div> 
+					<br>
+					<div class="form-group">
+						<label for="sel1">Gender :</label>
+						 <select required name="gender" value="{{request.form.gender}}" id="sel1">
+							 	 <option selected>select</option>
+								 <option value="M">Male</option>
+								 <option value="F">Female</option>
+								 <option value="O">Other</option>
+						 </select>
+					</div> 
+					<br>
+					<div class="form-group">
+						<label>Occupation : </label>
+						<input required type="text" name="occu"  value="{{request.form.occu}}">
+					</div>
+					<br>
+					<div class="form-group">
+						<label>Status : </label>
+						<input readonly type="text" name="aadhar_no"  value="Active">
+					</div> 
+				</div>
+			</div>
+				
+			<br>
+					
+			<input type="submit" class="btn btn-nav" name="submit" value="Submit">
+			
+		</form>
+		</center>
+		</div>
+	
+	<br>
+{% endblock %}

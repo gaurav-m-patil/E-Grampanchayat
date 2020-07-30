@@ -1,0 +1,39 @@
+{% extends 'user/user_layout.html' %}
+
+{% block body %}
+<div class="container" style="margin-top: 0px;">
+  <h2>Instructions</h2>
+    <ul style="margin: auto 5%">
+      <li>The facility of applying through internet in Thane district's Setu Center has been made available at <a target="_blank" href="http://egrampanchayat.gov.in">http://egrampanchayat.gov.in</a>.</li>
+      <li>Available E-services
+        <ol style="margin: auto 5%">
+          {% for c in data %}
+            <li>{{c[1]}}</li>
+          {% endfor %}
+        </ol>
+      </li>
+      <li>Before applying from this website, make sure that you have the technical parameters mentioned below on your computer.
+        <ol style="margin: auto 5%">
+          <li>Chrome or Mozilla Firefox Browser should be used.</li>
+        </ol>
+      </li>
+      <li>Select the Certificate you want.</li>
+      <li>The list of documents required for the certificate will appear on the computer.</li>
+      <li>Submit and Upload all related Documents and Information.</li>
+      <li>After clicking upon submit, you will get your Application Number.</li>
+      <li>Your Application Number helps you to track your Application.</li>
+    </ul>
+    <br><br>
+    <center>
+      <form class="" action="{{ url_for('user_request')}}" method="POST">
+        <select name="c_id" required>
+          <option value="">Select</option>
+          {% for c in data %}
+            <option value="{{c[0]}}">{{c[1]}}</option>
+          {% endfor %}
+        </select>
+        <input type="submit" name="" value="Continue">
+      </form>
+    </center>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'user/user_layout.html' %}
+
+{% block body %}
+
+<div class="container">
+	<table style="width: 100%">
+		<tr>
+			<td>#</td>
+			<td>Application For</td>
+			<td>Traking ID</td>
+			<td>Status</td>
+			<td>Download</td>
+		</tr>
+		{%for data in reqs%}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{data[9]}}</td>
+			<td>{{data[6]}}</td>
+			<td>{{data[5]}}</td>			
+			{% if data[7] == 1 %}
+			<td><a href="{{ url_for('CreateDoc',t_id=data[6])}}" target="_blank" class="btn btn-nav">Download</a></td>
+			{% else %}
+			<td><button class="btn btn-nav" disabled>Download </button> 
+			{% endif %}
+		</tr>
+		{%endfor%}		
+	</table>	
+</div>
+
+{% endblock %}
